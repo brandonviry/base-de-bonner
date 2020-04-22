@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" >
+</head>
+<body>
+    <header>
+        
+    </header>
+
+    <section>
+        <div class="section">
+        <div class="content">
+        <h1>PASSWORD</h1>
+        <input type="password" id="password">
+        </div>
+        <a onclick="check()">OK</a>
+    </div>
+    </section>
+    <footer>
+        
+    </footer>
+<script>
+    function check()
+    {
+        var password = document.getElementById("password").value;
+       
+        document.getElementsByTagName("footer")[0].innerHTML ='<a href="bdd/'+password+'.html">'+':PAGE:'+'</a>';
+    }
+</script>
+</body>
+</html>
