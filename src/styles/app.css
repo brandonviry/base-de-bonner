@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ctos-dark text-ctos-light font-primary antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  /* Glitch Effect */
+  .glitch {
+    animation: glitch 1s infinite;
+    text-shadow: 2px 0 #FF0044, -2px 0 #00D4FF;
+  }
+
+  /* Scanlines Effect */
+  .scanlines {
+    position: relative;
+  }
+
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 212, 255, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Glow Effect */
+  .glow {
+    box-shadow:
+      0 0 10px rgba(0, 212, 255, 0.5),
+      0 0 20px rgba(0, 212, 255, 0.3),
+      inset 0 0 10px rgba(0, 212, 255, 0.2);
+  }
+
+  .glow-danger {
+    box-shadow:
+      0 0 10px rgba(255, 0, 68, 0.5),
+      0 0 20px rgba(255, 0, 68, 0.3),
+      inset 0 0 10px rgba(255, 0, 68, 0.2);
+  }
+
+  .glow-success {
+    box-shadow:
+      0 0 10px rgba(0, 255, 136, 0.5),
+      0 0 20px rgba(0, 255, 136, 0.3),
+      inset 0 0 10px rgba(0, 255, 136, 0.2);
+  }
+
+  /* Border Animation */
+  .border-animate {
+    position: relative;
+    border: 2px solid transparent;
+  }
+
+  .border-animate::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, #00D4FF, #FF0044, #00D4FF);
+    background-size: 200% 100%;
+    animation: borderFlow 3s linear infinite;
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  @keyframes borderFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  /* CRT Screen Effect */
+  .crt-screen {
+    position: relative;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 212, 255, 0.05) 0%,
+      transparent 70%
+    );
+  }
+
+  .crt-screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 2px;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.27861; }
+    5% { opacity: 0.34769; }
+    10% { opacity: 0.23604; }
+    15% { opacity: 0.90626; }
+    20% { opacity: 0.18128; }
+    25% { opacity: 0.83891; }
+    30% { opacity: 0.65583; }
+    35% { opacity: 0.67807; }
+    40% { opacity: 0.26559; }
+    45% { opacity: 0.84693; }
+    50% { opacity: 0.96019; }
+    55% { opacity: 0.08594; }
+    60% { opacity: 0.20313; }
+    65% { opacity: 0.71988; }
+    70% { opacity: 0.53455; }
+    75% { opacity: 0.37288; }
+    80% { opacity: 0.71428; }
+    85% { opacity: 0.70419; }
+    90% { opacity: 0.7003; }
+    95% { opacity: 0.36108; }
+    100% { opacity: 0.24387; }
+  }
+
+  /* Hidden element for Level 10 Easter Egg */
+  .ultra-hidden {
+    opacity: 0.01;
+    transition: opacity 0.3s ease;
+    cursor: help;
+  }
+
+  .ultra-hidden:hover {
+    opacity: 0.3;
+  }
+}

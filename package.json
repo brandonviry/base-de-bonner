@@ -1,0 +1,23 @@
+{
+  "name": "ctos-mini-game",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "svelte": "^4.2.8",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.0.11"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.10",
+    "svelte-motion": "^0.12.2"
+  }
+}
